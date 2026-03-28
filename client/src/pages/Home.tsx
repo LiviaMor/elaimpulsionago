@@ -3,11 +3,14 @@ import { motion } from "framer-motion";
 import { Calculator, Users, BookOpen, Zap, ArrowRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TaxCalculator from "@/components/TaxCalculator";
+import TypebotWidget from "@/components/TypebotWidget";
 
 export default function Home() {
   const [showCalculator, setShowCalculator] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showTypebot, setShowTypebot] = useState(false);
 
+  const logoUrl = "https://d2xsxph8kpxj0f.cloudfront.net/310519663230880244/ZiFCrviuw9tzbL8mdF3mvw/ela_impulsiona_go_logo_dark_50a9a1a0.png";
   const heroImage = "https://d2xsxph8kpxj0f.cloudfront.net/310519663230880244/ZiFCrviuw9tzbL8mdF3mvw/hero-women-empowerment-VzR3C7axtT7tzR6A8TCjDz.webp";
   const mentorshipImage = "https://d2xsxph8kpxj0f.cloudfront.net/310519663230880244/ZiFCrviuw9tzbL8mdF3mvw/mentorship-connection-ggWJv6FwWTNkzKojkVxUDi.webp";
   const businessImage = "https://d2xsxph8kpxj0f.cloudfront.net/310519663230880244/ZiFCrviuw9tzbL8mdF3mvw/business-growth-5v2Qzv8ChZrVA7aXZEw2ag.webp";
@@ -18,19 +21,19 @@ export default function Home() {
       {/* Header/Navigation */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-orange-100">
         <div className="container flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">E</span>
-            </div>
-            <h1 className="font-bold text-lg text-gray-900">ELA Impulsiona GO</h1>
+          <div className="flex items-center gap-3">
+            <img src={logoUrl} alt="ELA Impulsiona GO" className="h-14 w-auto" />
           </div>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex gap-8">
-            <a href="#calculadora" className="text-gray-600 hover:text-orange-600 transition">Calculadora</a>
-            <a href="#mentorias" className="text-gray-600 hover:text-orange-600 transition">Mentorias</a>
-            <a href="#eventos" className="text-gray-600 hover:text-orange-600 transition">Eventos</a>
-            <a href="#comunidade" className="text-gray-600 hover:text-orange-600 transition">Comunidade</a>
+          <nav className="hidden md:flex gap-8 items-center">
+            <a href="#calculadora" className="text-yellow-500 font-semibold hover:text-yellow-600 transition">Calculadora</a>
+            <a href="#mentorias" className="text-yellow-500 font-semibold hover:text-yellow-600 transition">Mentorias</a>
+            <a href="#eventos" className="text-yellow-500 font-semibold hover:text-yellow-600 transition">Eventos</a>
+            <a href="#comunidade" className="text-yellow-500 font-semibold hover:text-yellow-600 transition">Comunidade</a>
+            <a href="https://wa.me/5562999999999" target="_blank" rel="noopener noreferrer" className="text-green-500 font-semibold hover:text-green-600 transition">
+              WhatsApp
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -45,10 +48,11 @@ export default function Home() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t border-orange-100 p-4 space-y-3">
-            <a href="#calculadora" className="block text-gray-600 hover:text-orange-600">Calculadora</a>
-            <a href="#mentorias" className="block text-gray-600 hover:text-orange-600">Mentorias</a>
-            <a href="#eventos" className="block text-gray-600 hover:text-orange-600">Eventos</a>
-            <a href="#comunidade" className="block text-gray-600 hover:text-orange-600">Comunidade</a>
+            <a href="#calculadora" className="block text-yellow-500 font-semibold hover:text-yellow-600">Calculadora</a>
+            <a href="#mentorias" className="block text-yellow-500 font-semibold hover:text-yellow-600">Mentorias</a>
+            <a href="#eventos" className="block text-yellow-500 font-semibold hover:text-yellow-600">Eventos</a>
+            <a href="#comunidade" className="block text-yellow-500 font-semibold hover:text-yellow-600">Comunidade</a>
+            <a href="https://wa.me/5562999999999" target="_blank" rel="noopener noreferrer" className="block text-green-500 font-semibold hover:text-green-600">WhatsApp</a>
           </div>
         )}
       </header>
@@ -392,7 +396,10 @@ export default function Home() {
               Junte-se a centenas de mulheres que já estão transformando suas vidas através do empreendedorismo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-white text-orange-600 hover:bg-orange-50 font-semibold">
+              <Button 
+                onClick={() => setShowTypebot(true)}
+                className="bg-white text-orange-600 hover:bg-orange-50 font-semibold"
+              >
                 Começar Agora <ArrowRight className="ml-2" size={20} />
               </Button>
               <Button
@@ -405,6 +412,16 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Typebot Bubble */}
+      {showTypebot && (
+        <div>
+          <TypebotWidget 
+            typebotId="ela-impulsiona-go" 
+            isOpen={showTypebot}
+          />
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-12">
@@ -447,6 +464,21 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Typebot Global Script */}
+      <script src="https://cdn.jsdelivr.net/npm/@typebot.io/js@latest" async></script>
+      <script>
+        {`
+          if (window.Typebot) {
+            window.Typebot.initBubble({
+              typebot: 'ela-impulsiona-go',
+              theme: {
+                button: { backgroundColor: '#f97316', iconColor: '#ffffff' },
+              },
+            });
+          }
+        `}
+      </script>
     </div>
   );
 }
