@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-purple-50">
       {/* Header/Navigation */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-orange-100">
+      <header className="sticky top-0 z-50 bg-gradient-to-r from-amber-900 to-yellow-900 backdrop-blur-md border-b border-yellow-700 shadow-lg">
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
             <img src={logoUrl} alt="ELA Impulsiona GO" className="h-12 w-auto" />
@@ -27,18 +27,18 @@ export default function Home() {
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex gap-8 items-center">
-            <a href="#calculadora" className="text-yellow-500 font-semibold hover:text-yellow-600 transition">Calculadora</a>
-            <a href="#mentorias" className="text-yellow-500 font-semibold hover:text-yellow-600 transition">Mentorias</a>
-            <a href="#eventos" className="text-yellow-500 font-semibold hover:text-yellow-600 transition">Eventos</a>
-            <a href="#comunidade" className="text-yellow-500 font-semibold hover:text-yellow-600 transition">Comunidade</a>
-            <a href="https://wa.me/5562999999999" target="_blank" rel="noopener noreferrer" className="text-green-500 font-semibold hover:text-green-600 transition">
+            <a href="#calculadora" className="text-yellow-300 font-semibold hover:text-yellow-200 transition">Calculadora</a>
+            <a href="#mentorias" className="text-yellow-300 font-semibold hover:text-yellow-200 transition">Mentorias</a>
+            <a href="#eventos" className="text-yellow-300 font-semibold hover:text-yellow-200 transition">Eventos</a>
+            <a href="#comunidade" className="text-yellow-300 font-semibold hover:text-yellow-200 transition">Comunidade</a>
+            <a href="https://wa.me/5562999999999" target="_blank" rel="noopener noreferrer" className="text-green-400 font-semibold hover:text-green-300 transition">
               WhatsApp
             </a>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="md:hidden text-yellow-300 hover:text-yellow-200 transition"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -47,12 +47,12 @@ export default function Home() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-orange-100 p-4 space-y-3">
-            <a href="#calculadora" className="block text-yellow-500 font-semibold hover:text-yellow-600">Calculadora</a>
-            <a href="#mentorias" className="block text-yellow-500 font-semibold hover:text-yellow-600">Mentorias</a>
-            <a href="#eventos" className="block text-yellow-500 font-semibold hover:text-yellow-600">Eventos</a>
-            <a href="#comunidade" className="block text-yellow-500 font-semibold hover:text-yellow-600">Comunidade</a>
-            <a href="https://wa.me/5562999999999" target="_blank" rel="noopener noreferrer" className="block text-green-500 font-semibold hover:text-green-600">WhatsApp</a>
+          <div className="md:hidden bg-gradient-to-r from-amber-800 to-yellow-800 border-t border-yellow-700 p-4 space-y-3">
+            <a href="#calculadora" className="block text-yellow-300 font-semibold hover:text-yellow-200">Calculadora</a>
+            <a href="#mentorias" className="block text-yellow-300 font-semibold hover:text-yellow-200">Mentorias</a>
+            <a href="#eventos" className="block text-yellow-300 font-semibold hover:text-yellow-200">Eventos</a>
+            <a href="#comunidade" className="block text-yellow-300 font-semibold hover:text-yellow-200">Comunidade</a>
+            <a href="https://wa.me/5562999999999" target="_blank" rel="noopener noreferrer" className="block text-green-400 font-semibold hover:text-green-300">WhatsApp</a>
           </div>
         )}
       </header>
