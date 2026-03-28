@@ -10,7 +10,7 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showTypebot, setShowTypebot] = useState(false);
 
-  const logoUrl = "https://d2xsxph8kpxj0f.cloudfront.net/310519663230880244/ZiFCrviuw9tzbL8mdF3mvw/ela-logo-no-background-v2-QE3UPW6BeHKHkbpVUjgTbs.webp";
+  const logoUrl = "https://d2xsxph8kpxj0f.cloudfront.net/310519663230880244/ZiFCrviuw9tzbL8mdF3mvw/SimpleTechnologyLinkedInBanner(3)_8beccb91.png";
   const heroImage = "https://d2xsxph8kpxj0f.cloudfront.net/310519663230880244/ZiFCrviuw9tzbL8mdF3mvw/hero-women-empowerment-VzR3C7axtT7tzR6A8TCjDz.webp";
   const mentorshipImage = "https://d2xsxph8kpxj0f.cloudfront.net/310519663230880244/ZiFCrviuw9tzbL8mdF3mvw/mentorship-connection-ggWJv6FwWTNkzKojkVxUDi.webp";
   const businessImage = "https://d2xsxph8kpxj0f.cloudfront.net/310519663230880244/ZiFCrviuw9tzbL8mdF3mvw/business-growth-5v2Qzv8ChZrVA7aXZEw2ag.webp";
@@ -22,7 +22,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 bg-gradient-to-r from-amber-900 to-yellow-900 backdrop-blur-md border-b border-yellow-700 shadow-lg">
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
-            <img src={logoUrl} alt="ELA Impulsiona GO" className="h-16 w-auto" />
+            <img src={logoUrl} alt="ELA Impulsiona GO" className="h-14 w-auto" />
           </div>
 
           {/* Desktop Menu */}
