@@ -199,9 +199,6 @@ export default function Home() {
 
   const logoUrl = "/logo-nova.png";
 
-  const scrollToChatbot = () => {
-    document.getElementById("chatbot")?.scrollIntoView({ behavior: "smooth" });
-  };
   const heroImage = "https://d2xsxph8kpxj0f.cloudfront.net/310519663230880244/ZiFCrviuw9tzbL8mdF3mvw/hero-women-empowerment-VzR3C7axtT7tzR6A8TCjDz.webp";
 
   const counter1 = useCounter(54, 2500);
@@ -243,11 +240,11 @@ export default function Home() {
               </a>
             ))}
             <Button
-              onClick={scrollToChatbot}
+              asChild
               size="sm"
               className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white rounded-full px-6"
             >
-              Começar Agora
+              <a href="#chatbot">Começar Agora</a>
             </Button>
           </nav>
           <button
@@ -276,10 +273,11 @@ export default function Home() {
               </a>
             ))}
             <Button
-              onClick={() => { scrollToChatbot(); setMobileMenuOpen(false); }}
+              asChild
+              onClick={() => setMobileMenuOpen(false)}
               className="w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full"
             >
-              Começar Agora
+              <a href="#chatbot">Começar Agora</a>
             </Button>
           </motion.div>
         )}
@@ -326,11 +324,13 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <Button
-                onClick={scrollToChatbot}
+                asChild
                 className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white rounded-full px-8 py-6 text-lg shadow-lg shadow-orange-500/25"
               >
-                <Play className="mr-2" size={20} />
-                Iniciar Minha Trilha
+                <a href="#chatbot">
+                  <Play className="mr-2" size={20} />
+                  Iniciar Minha Trilha
+                </a>
               </Button>
               <Button
                 variant="outline"
@@ -815,10 +815,12 @@ export default function Home() {
                   </div>
 
                   <Button
-                    onClick={scrollToChatbot}
+                    asChild
                     className={`mt-8 bg-gradient-to-r ${trilhas[activeTrilha].color} text-white rounded-full px-8 self-start`}
                   >
-                    Começar esta trilha <ArrowRight className="ml-2" size={18} />
+                    <a href="#chatbot">
+                      Começar esta trilha <ArrowRight className="ml-2" size={18} />
+                    </a>
                   </Button>
                 </motion.div>
               </AnimatePresence>
@@ -1247,11 +1249,13 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                onClick={scrollToChatbot}
+                asChild
                 className="bg-white text-orange-600 hover:bg-orange-50 rounded-full px-10 py-6 text-lg font-bold shadow-xl"
               >
-                <Rocket className="mr-2" size={20} />
-                Começar Minha Trilha Grátis
+                <a href="#chatbot">
+                  <Rocket className="mr-2" size={20} />
+                  Começar Minha Trilha Grátis
+                </a>
               </Button>
               <Button
                 onClick={() => setShowCalculator(true)}
