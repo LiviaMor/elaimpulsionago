@@ -5,8 +5,10 @@
 
 export interface Atividade {
   nome: string;
-  tipo: "comercio" | "servicos" | "industria";
+  tipo: "comercio" | "servicos" | "industria" | "comercio_servicos";
   mei: boolean;
+  alvaraSanitario?: boolean;
+  alvaraFuncionamento?: boolean;
 }
 
 export const atividades: Atividade[] = [
@@ -34,12 +36,12 @@ export const atividades: Atividade[] = [
   { nome: "Personal trainer", tipo: "servicos", mei: true },
   { nome: "Professor particular", tipo: "servicos", mei: true },
   { nome: "Instrutor de música", tipo: "servicos", mei: true },
-  { nome: "Cozinheiro(a) / Chef", tipo: "servicos", mei: true },
-  { nome: "Confeiteiro(a)", tipo: "servicos", mei: true },
-  { nome: "Marmiteiro(a)", tipo: "servicos", mei: true },
-  { nome: "Doceiro(a)", tipo: "servicos", mei: true },
-  { nome: "Pizzaiolo", tipo: "servicos", mei: true },
-  { nome: "Churrasqueiro", tipo: "servicos", mei: true },
+  { nome: "Cozinheiro(a) / Chef", tipo: "servicos", mei: true, alvaraSanitario: true, alvaraFuncionamento: true },
+  { nome: "Confeiteiro(a)", tipo: "servicos", mei: true, alvaraSanitario: true, alvaraFuncionamento: true },
+  { nome: "Marmiteiro(a)", tipo: "servicos", mei: true, alvaraSanitario: true, alvaraFuncionamento: true },
+  { nome: "Doceiro(a)", tipo: "servicos", mei: true, alvaraSanitario: true, alvaraFuncionamento: true },
+  { nome: "Pizzaiolo", tipo: "servicos", mei: true, alvaraSanitario: true, alvaraFuncionamento: true },
+  { nome: "Churrasqueiro", tipo: "servicos", mei: true, alvaraSanitario: true, alvaraFuncionamento: true },
   { nome: "Mecânico de automóveis", tipo: "servicos", mei: true },
   { nome: "Mecânico de motos", tipo: "servicos", mei: true },
   { nome: "Borracheiro", tipo: "servicos", mei: true },
@@ -61,16 +63,16 @@ export const atividades: Atividade[] = [
   { nome: "Encadernador", tipo: "servicos", mei: true },
   { nome: "Datilógrafo", tipo: "servicos", mei: true },
   { nome: "Digitador", tipo: "servicos", mei: true },
-  { nome: "Consultor", tipo: "servicos", mei: true },
-  { nome: "Contador", tipo: "servicos", mei: true },
-  { nome: "Advogado", tipo: "servicos", mei: true },
-  { nome: "Engenheiro", tipo: "servicos", mei: true },
-  { nome: "Arquiteto", tipo: "servicos", mei: true },
-  { nome: "Médico", tipo: "servicos", mei: true },
-  { nome: "Dentista", tipo: "servicos", mei: true },
-  { nome: "Psicólogo", tipo: "servicos", mei: true },
-  { nome: "Nutricionista", tipo: "servicos", mei: true },
-  { nome: "Fisioterapeuta", tipo: "servicos", mei: true },
+  { nome: "Consultor", tipo: "servicos", mei: false },
+  { nome: "Contador", tipo: "servicos", mei: false },
+  { nome: "Advogado", tipo: "servicos", mei: false },
+  { nome: "Engenheiro", tipo: "servicos", mei: false },
+  { nome: "Arquiteto", tipo: "servicos", mei: false },
+  { nome: "Médico", tipo: "servicos", mei: false },
+  { nome: "Dentista", tipo: "servicos", mei: false },
+  { nome: "Psicólogo", tipo: "servicos", mei: false },
+  { nome: "Nutricionista", tipo: "servicos", mei: false },
+  { nome: "Fisioterapeuta", tipo: "servicos", mei: false },
   { nome: "Terapeuta", tipo: "servicos", mei: true },
   { nome: "Coach", tipo: "servicos", mei: true },
   { nome: "Consultor de negócios", tipo: "servicos", mei: true },
@@ -99,7 +101,7 @@ export const atividades: Atividade[] = [
   { nome: "Roteirista", tipo: "servicos", mei: true },
   { nome: "Diretor de cinema", tipo: "servicos", mei: true },
   { nome: "Produtor de cinema", tipo: "servicos", mei: true },
-  { nome: "Jornalista", tipo: "servicos", mei: true },
+  { nome: "Jornalista", tipo: "servicos", mei: false },
   { nome: "Blogueiro", tipo: "servicos", mei: true },
   { nome: "Podcaster", tipo: "servicos", mei: true },
   { nome: "Streamer", tipo: "servicos", mei: true },
@@ -115,7 +117,7 @@ export const atividades: Atividade[] = [
   { nome: "Decorador", tipo: "servicos", mei: true },
   { nome: "Floricultora", tipo: "servicos", mei: true },
   { nome: "Paisagista", tipo: "servicos", mei: true },
-  { nome: "Veterinário", tipo: "servicos", mei: true },
+  { nome: "Veterinário", tipo: "servicos", mei: false },
   { nome: "Groomer de animais", tipo: "servicos", mei: true },
   { nome: "Adestrador de cães", tipo: "servicos", mei: true },
   { nome: "Criador de animais", tipo: "servicos", mei: true },
@@ -128,8 +130,8 @@ export const atividades: Atividade[] = [
   { nome: "Vendedor de eletrônicos", tipo: "comercio", mei: true },
   { nome: "Vendedor de livros", tipo: "comercio", mei: true },
   { nome: "Vendedor de cosméticos", tipo: "comercio", mei: true },
-  { nome: "Vendedor de alimentos", tipo: "comercio", mei: true },
-  { nome: "Vendedor de bebidas", tipo: "comercio", mei: true },
+  { nome: "Vendedor de alimentos", tipo: "comercio", mei: true, alvaraSanitario: true, alvaraFuncionamento: true },
+  { nome: "Vendedor de bebidas", tipo: "comercio", mei: true, alvaraSanitario: true, alvaraFuncionamento: true },
   { nome: "Vendedor de flores", tipo: "comercio", mei: true },
   { nome: "Vendedor de plantas", tipo: "comercio", mei: true },
   { nome: "Vendedor de presentes", tipo: "comercio", mei: true },
